@@ -6,8 +6,8 @@ RUN apt update && apt install -y --no-install-recommends python3-colcon-common-e
 
 WORKDIR /colcon_ws/src
 
-RUN git clone --single-branch --depth 1 https://github.com/rosblox/px4_msgs.git 
-RUN git clone --single-branch --depth 1 https://github.com/rosblox/px4_ros_com.git 
+COPY px4_msgs px4_msgs
+COPY px4_ros_com px4_ros_com
 
 WORKDIR /colcon_ws
 
