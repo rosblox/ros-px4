@@ -16,3 +16,6 @@ RUN . /opt/ros/${ROS_DISTRO}/setup.sh && colcon build --cmake-args -DCMAKE_BUILD
 WORKDIR /
 
 COPY ros_entrypoint.sh .
+
+RUN echo 'alias build="colcon build --cmake-args --symlink-install --packages-skip px4_msgs --event-handlers console_direct+"' >> ~/.bashrc
+RUN echo 'alias run="ros2 run px4_ros_com offboard_control"' >> ~/.bashrc
