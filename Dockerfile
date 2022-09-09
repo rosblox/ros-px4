@@ -2,7 +2,7 @@ ARG ROS_DISTRO=humble
 
 FROM ros:${ROS_DISTRO}-ros-base
 
-RUN apt update && apt install -y --no-install-recommends python3-colcon-common-extensions && rm -rf /var/lib/apt/lists/*
+RUN apt update && apt install -y --no-install-recommends python3-colcon-common-extensions ros-humble-control-toolbox && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /colcon_ws/src
 
